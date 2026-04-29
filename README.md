@@ -1,6 +1,7 @@
 # Per-Frame Deepfake Analysis Viewer
 
 An interactive browser-based viewer for inspecting per-frame deepfake detection outputs. Browse samples by category/generator, scrub through frames, view prediction timelines, and compare feature visualizations side-by-side.
+<img width="921" height="952" alt="image" src="https://github.com/user-attachments/assets/26f0af24-8551-487a-a420-ded9940fdafe" />
 
 ## Quick Start
 
