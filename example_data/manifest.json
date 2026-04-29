@@ -1,0 +1,18 @@
+{
+    "total_samples": 2,
+    "model_names": ["resnet50_seg", "convnext_tiny"],
+    "samples": [
+        {
+            "sample_id": "fake__FaceSwap__video_001",
+            "category": "fake",
+            "generator": "FaceSwap",
+            "label_str": "fake"
+        },
+        {
+            "sample_id": "real__original__video_042",
+            "category": "real",
+            "generator": "original",
+            "label_str": "real"
+        }
+    ]
+}

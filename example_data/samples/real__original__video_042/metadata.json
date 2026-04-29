@@ -1,0 +1,59 @@
+{
+    "sample_id": "real__original__video_042",
+    "label_str": "real",
+    "num_frames": 5,
+    "num_windows": 2,
+    "model_names": ["resnet50_seg", "convnext_tiny"],
+
+    "frames": [
+        "frames/frame_0000.jpg",
+        "frames/frame_0001.jpg",
+        "frames/frame_0002.jpg",
+        "frames/frame_0003.jpg",
+        "frames/frame_0004.jpg"
+    ],
+    "flow_vis": [
+        "flow/flow_0000.jpg",
+        "flow/flow_0001.jpg",
+        "flow/flow_0002.jpg",
+        "flow/flow_0003.jpg"
+    ],
+    "accel_vis": [
+        "accel/accel_0000.jpg",
+        "accel/accel_0001.jpg",
+        "accel/accel_0002.jpg"
+    ],
+    "killing_energy_vis": [
+        "killing_energy/ke_0000.jpg",
+        "killing_energy/ke_0001.jpg",
+        "killing_energy/ke_0002.jpg",
+        "killing_energy/ke_0003.jpg"
+    ],
+    "seg_vis": [
+        "seg/seg_0000.png",
+        "seg/seg_0001.png",
+        "seg/seg_0002.png",
+        "seg/seg_0003.png",
+        "seg/seg_0004.png"
+    ],
+    "gradcam_vis": {
+        "resnet50_seg": [
+            "gradcam/resnet50_seg/gcam_win0.jpg",
+            "gradcam/resnet50_seg/gcam_win1.jpg"
+        ],
+        "convnext_tiny": [
+            "gradcam/convnext_tiny/gcam_win0.jpg",
+            "gradcam/convnext_tiny/gcam_win1.jpg"
+        ]
+    },
+    "predictions": {
+        "resnet50_seg": [
+            { "window_idx": 0, "center_frame": 1, "frame_range": [0, 2], "logit": -1.80, "prob": 0.142 },
+            { "window_idx": 1, "center_frame": 3, "frame_range": [2, 4], "logit": -2.10, "prob": 0.109 }
+        ],
+        "convnext_tiny": [
+            { "window_idx": 0, "center_frame": 1, "frame_range": [0, 2], "logit": -1.50, "prob": 0.182 },
+            { "window_idx": 1, "center_frame": 3, "frame_range": [2, 4], "logit": -1.90, "prob": 0.130 }
+        ]
+    }
+}
