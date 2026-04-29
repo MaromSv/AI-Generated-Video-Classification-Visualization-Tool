@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per-Frame Deepfake Analysis Viewer</title>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Per-Frame Deepfake Analysis</h1>
+        <p class="subtitle">Dense motion feature analysis &amp; model predictions</p>
+    </header>
+
+    <div id="app">
+        <!-- Fallback loader (shown only if auto-load fails) -->
+        <div id="loader" class="panel hidden">
+            <p>Auto-load failed. Select the analysis output folder:</p>
+            <input type="file" id="manifest-file" webkitdirectory>
+        </div>
+        <p id="load-status" class="status"></p>
+
+        <!-- ── Controls ── -->
+        <div id="controls" class="panel hidden">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="sel-category">Category</label>
+                    <select id="sel-category"></select>
+                </div>
+                <div class="control-group">
+                    <label for="sel-generator">Generator</label>
+                    <select id="sel-generator"></select>
+                </div>
+                <div class="control-group">
+                    <label for="sel-sample">Sample</label>
+                    <select id="sel-sample"></select>
+                </div>
+                <div class="control-group info">
+                    <span id="label-badge" class="badge"></span>
+                    <span id="info-text"></span>
+                </div>
+                <div class="control-group">
+                    <label for="sel-model">Model</label>
+                    <select id="sel-model"></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Main viewer ── -->
+        <div id="viewer" class="hidden">
+            <!-- Prediction timeline -->
+            <div class="panel">
+                <h3>Prediction Timeline</h3>
+                <div id="prediction-chart"></div>
+            </div>
+
+            <!-- Frame slider -->
+            <div class="panel slider-panel">
+                <div class="slider-row">
+                    <button id="btn-prev" title="Previous frame">&lt;</button>
+                    <input type="range" id="frame-slider" min="0" max="0" value="0">
+                    <button id="btn-next" title="Next frame">&gt;</button>
+                    <span id="frame-counter">0 / 0</span>
+                    <button id="btn-play" title="Play/Pause">&#9654;</button>
+                    <label for="playback-speed">Speed:</label>
+                    <select id="playback-speed">
+                        <option value="500">0.5x</option>
+                        <option value="250" selected>1x</option>
+                        <option value="125">2x</option>
+                        <option value="60">4x</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Feature panels (built dynamically by app.js — see FEATURE_REGISTRY) -->
+            <div id="features-grid" class="features-grid"></div>
+        </div>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>
